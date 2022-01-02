@@ -1,0 +1,95 @@
+Paul Steiner
+A02234580
+CS 1400
+Assignment 15
+Black Jack
+
+Requirement Specifications
+Get User Input:
+Number of players, their bet, hit or hold, play again
+
+Output:
+Their bet, the dealers second card, their cards, all the dealers cards, if they win or lose, how much money they win or lose
+
+System Anaylsis:
+players wager > 5, if they have less that 5 dollars, players wager == left over value
+players money += players wager if they win
+players money -= players wager if they lose
+if cardValue > 10 then cardValue = 10 (because jacks queens and kings are 10)
+if cardValue == 1 then cardValue == 11 (because its an ace)
+but if total value of hand > 21 then total value of hand -= 10 (because the ace is 1, and if its over 21 the car is worth only 1)
+(I am not putting the math for the modules given to us by the professor)
+
+System Design:
+Import Deck
+Import Time
+Define Main
+Create a list to hold the money
+Ask for the amount of players
+Depending on how many players, make the other players true or false.
+Make a list the size of the number of players, and assign 100 to each spot
+Make a variable to use in a while loop
+Make a while loop
+Define the deck
+Define the hand
+Add one to the amount of players, because the dealer needs to be in the list
+Make a list of lists ( multidimensional list )
+Make a list for the wagers
+Ask for player ones bet
+Make a while loop
+Print how much money they have and ask for a bet
+Add that bet to the list
+If the bet is less than five, ask them to reenter unless they have less than five.
+If their bet is over their amount of money, tell them to reenter.
+Do that for all players playing.
+Draw a card for each player, one at a time.
+Print the second card in the dealers hand
+Make a while loop
+Get the value of their hand
+Show them their hand and its value
+Ask if they want to hit or hold
+If they hit, add a card
+If it busts, tell them and break the loop
+If they hold, break the loop
+Do for all players
+Make a while loop
+Get the value of the dealers hand
+Show the dealers hand and the value of their hand
+time.sleep
+If they have less than 17, draw a card until its 17 or over
+If they bust exit the loop
+If they have over 17, hold
+time.sleep
+get the sum of the players hand
+get the sum of the dealers hand
+if the sum of the players hand is over 21, they bust
+if the dealer also busted, let them know they both busted
+subtract the wager from the total
+if they have no money, take them out of the game
+if the dealer busted, but they didn't, tell them they won
+add the wager money to the total
+if the players hand is less than 21, but over the dealers hand they win
+add the wager to the total
+if they have less than the dealer, they lose
+subtract the wager from the total
+if they have the same, they tie
+nothing happens to the total
+if they have no money, take the player out of the game and inform them
+do for all the players
+Make a for loop printing the remainder of the money left for each player
+If all the players are out of the game, exit
+If there is a player left over, ask if they want to play again
+If they want to play again, start again.
+If they want to leave, sort the list, do multiple if statements, then exit()
+Define getHandValue
+Give it a list and a value
+Make a value called sum = 0
+Make a for list that goes through in card in the multidimensional, at the list at spot value
+Make a temp value equal the value of the point on that list
+If it is over 10, make it equal to ten (face cards)
+If it is 1, make it equal eleven (aces)
+Add the temp value to the value of the sum
+If the sum is finished and over 21, see if there was a value that equaled one
+If there was, subtract 10, because Ace's are only worth 1 if the total value of the cards is over 21.
+Return the sum
+Call main
